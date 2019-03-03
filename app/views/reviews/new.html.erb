@@ -1,0 +1,15 @@
+<h1>Reviews#new</h1>
+<p>Find me in app/views/reviews/new.html.erb</p>
+<%= form_for @review, url: user_reviews_path do |f| %>
+    <div class="review">
+    作成中...<br />
+    <%= f.text_area :content, class: 'content', id: :content, required: true, maxlength: 100  %><br/ >
+    ☆<br />
+    <label><%= f.radio_button :star, "1" %>1</label>
+    <label><%= f.radio_button :star, "2" %>2</label>
+    <label><%= f.radio_button :star, "3" %>3</label>
+    <label><%= f.radio_button :star, "4" %>4</label>
+    <label><%= f.radio_button :star, "5" %>5</label>
+    <%= f.submit %>
+    </div>
+<% end %>

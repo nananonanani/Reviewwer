@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Viewwer</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <%= form_tag('/login') do %>
+    <div class="field"><%= label_tag :login_id, 'login id' %>
+      <%= text_field_tag :login_id, params[:login_id] %>
+    </div>
+    <div class="field"><%= label_tag :password, 'password' %>
+      <%= password_field_tag :password, params[:password] %>
+    </div>
+    <div class="actions"><%= submit_tag "ログイン" %>
+    </div>
+  <% end %>
+  </body>
+</html>
