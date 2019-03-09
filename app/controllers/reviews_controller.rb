@@ -13,10 +13,8 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.user_id = session[:user_id]
     if @review.valid?
-      logger.debug("valid")
       @review.save
     else
-      logger.debug("invalid")
       logger.debug(@review.errors.messages)
     end
     @user = User.find_by(id: session[:user_id])
